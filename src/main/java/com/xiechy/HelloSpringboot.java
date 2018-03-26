@@ -33,6 +33,7 @@ public class HelloSpringboot {
 
     @RequestMapping("/putParam")
     public String resive(int id, String name) {
+        //tests
         System.out.println("收到前台信息：id:" + id + ",name:" + name);
         TestQuery.insertUser(new User(id, name));
         return "ok!";

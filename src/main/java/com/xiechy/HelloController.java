@@ -25,10 +25,15 @@ public class HelloController {
 
     @RequestMapping("/name")
     public String name(Map<String, Object> map) {
-        map.put("name", "Clark");
+        map.put("name", "nakey22112");
 
         System.out.println("============================================");
         return "hello";
+    }
+
+    @RequestMapping("/user")
+    public String userPage(){
+        return "user";
     }
 
 }

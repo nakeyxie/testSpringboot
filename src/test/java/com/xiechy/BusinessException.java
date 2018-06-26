@@ -3,6 +3,10 @@
  * @create 2018-01-02
  * @Descrption
  **/
+
+
+package com.xiechy;
+
 public class BusinessException extends RuntimeException {
 
     private static final long serialVersionUID = -1450841463269L;

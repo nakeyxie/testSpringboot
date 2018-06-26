@@ -1,5 +1,6 @@
 package com.xiechy;
 
+import com.sun.deploy.net.HttpRequest;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,7 @@ import java.util.List;
 @RestController
 public class HelloSpringboot {
 
-    @RequestMapping("/hellos")
+    @RequestMapping("/list")
     public String hello() {
         List<User> userList = TestQuery.getUser();
         StringBuffer strbuf = new StringBuffer();
@@ -32,11 +33,11 @@ public class HelloSpringboot {
     }
 
     @RequestMapping("/putParam")
-    public String resive(int id, String name) {
+    public String resive(Integer strId, String name) {
         //tests
-        System.out.println("收到前台信息：id:" + id + ",name:" + name);
-        TestQuery.insertUser(new User(id, name));
-        return "ok!";
+        System.out.println("收到前台信息：id:" + strId + ",name:" + name);
+        TestQuery.insertUser(new User(strId, name));
+        return hello();
     }
 
 

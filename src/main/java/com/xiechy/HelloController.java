@@ -36,6 +36,14 @@ public class HelloController {
         return "user";
     }
 
+    @RequestMapping("/user2")
+    public String userPage2(){
+        return "user2";
+    }
+    @RequestMapping("/layout")
+    public String layout(){
+        return "layout";
+    }
 }
 
 

@@ -90,7 +90,6 @@ public class ExperimentPackServiceTest {
         paramsMap.put("key1","value1");
         paramsMap.put("key2","value2");
         paramsMap.put("key3","value3");
-
         System.out.println(JSON.toJSONString(paramsMap));
     }
 

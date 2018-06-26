@@ -3,6 +3,8 @@
  * @create 2018-01-02
  * @Descrption
  **/
+package com.xiechy;
+
 public class TestThrowEX {
 
     public static void main(String[] args) {

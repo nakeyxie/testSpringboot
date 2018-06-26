@@ -1,3 +1,4 @@
+package com.xiechy;
 /**
  * @author xiechy
  * @create 2018-01-02
@@ -14,12 +15,9 @@ public class TestDoubleKuoHao {
     }
 
     public static void main(String[] args) {
-        TestDoubleKuoHao t  = new TestDoubleKuoHao(){{
-            this.addObject(new Object(){{
-                System.out.println("code:"+this.hashCode());
-            }
-            });
-        }};
+        TestDoubleKuoHao t   = new TestDoubleKuoHao();
+        t.addObject(new Object());
+        System.out.println(t);
     }
 }
 

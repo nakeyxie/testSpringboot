@@ -18,6 +18,9 @@ public class Testjava8 {
 
         optional.ifPresent((s) -> System.out.println(s.charAt(0)));     // "b"
         System.out.println(optional.ofNullable(null).orElse("test"));
+
+        System.out.println("---------------");
+        System.out.println(optional.ofNullable(null).orElse(0L).toString());
     }
 }
 

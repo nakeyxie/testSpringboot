@@ -9,6 +9,8 @@ public class User {
     int id;
     String name;
 
+    Double sarlay;
+
     public User(){
         super();
     }
@@ -16,6 +18,14 @@ public class User {
     public User (int id, String name){
         this.id = id;
         this.name = name;
+    }
+
+    public Double getSarlay() {
+        return sarlay;
+    }
+
+    public void setSarlay(Double sarlay) {
+        this.sarlay = sarlay;
     }
 
     public int getId() {
@@ -34,11 +44,13 @@ public class User {
         this.name = name;
     }
 
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", sarlay=" + sarlay +
                 '}';
     }
 }

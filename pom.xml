@@ -81,11 +81,37 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<!-- servlet依赖.-->
+		<!--excel导出用poi start-->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.14</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-excelant</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<!--excel导出用poi  end-->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>net.sf.barcode4j</groupId>
+			<artifactId>barcode4j</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.3.2</version>
+		</dependency>
+		<!--<dependency>
+			<groupId>org.jbarcode</groupId>
+			<artifactId>JBarcode</artifactId>
+		</dependency>-->
         <!--不需要增加此依赖包，增加了会报404，出不来界面
         <dependency>
             <groupId>javax.servlet.jsp</groupId>

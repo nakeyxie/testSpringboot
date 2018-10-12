@@ -2,6 +2,7 @@ package com.xiechy.http;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.xiechy.testBeanutils.Person;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
@@ -91,6 +92,29 @@ public class ExperimentPackServiceTest {
         paramsMap.put("key2","value2");
         paramsMap.put("key3","value3");
         System.out.println(JSON.toJSONString(paramsMap));
+    }
+
+    @Test
+    public void testGetHoliday(){
+        HttpClient client = new HttpClient();
+        String date ="20180930";
+        String url = "http://api.goseek.cn/Tools/holiday?date="+date;
+        GetMethod getMethod = new GetMethod(url);
+
+        try {
+            int resultCode = client.executeMethod(getMethod);
+            if (HttpStatus.SC_OK == resultCode) {
+                byte[] result = getMethod.getResponseBody();
+                String resultStr = new String(result, "UTF-8");
+                System.out.println("结果为：");
+                System.out.println(resultStr);
+                JSONObject object = JSONObject.parseObject(resultStr);
+                Integer number = (Integer) object.get("data");
+                System.out.println(number.toString());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

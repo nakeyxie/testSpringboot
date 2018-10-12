@@ -1,14 +1,9 @@
 package com.xiechy;
 
-import com.sun.org.apache.bcel.internal.util.ClassLoader;
-import org.apache.tomcat.jni.*;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.junit.Test;
 import org.springframework.util.StringUtils;
-import sun.nio.cs.ext.GBK;
 
 import java.io.*;
-import java.io.File;
 
 /**
  * @author xiechy
@@ -30,7 +25,7 @@ public class TestOperatorCmd {
         String order4="cmd /k ipconfig";
         String gbkOder = null;
         try {
-            gbkOder = new String(order4.getBytes(), "GBK");
+            gbkOder = new String(order.getBytes(), "GBK");
         } catch (Exception e) {
             e.printStackTrace();
 

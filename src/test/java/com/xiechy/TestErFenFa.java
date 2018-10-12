@@ -22,6 +22,13 @@ public class TestErFenFa {
         while (low <= high) {
             times++;
             //计算出中间索引值
+            /*java中有三种移位运算符
+
+                    <<      :     左移运算符，num << 1,相当于num乘以2
+
+                    >>      :     右移运算符，num >> 1,相当于num除以2
+
+                    >>>    :     无符号右移，忽略符号位，空位都以0补齐*/
             int middle = (high + low)>>>1 ;//防止溢出
             if (des == srcArray[middle]) {
                 System.out.println("查找次数:"+times);

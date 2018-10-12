@@ -144,7 +144,7 @@ public class PropertyUtils {
     }
 
     public static void testGetEnumMsg(){
-       Map<String,String> enumFieldMap = getEnumFields("com.xiechy.BatchContorlState","getText");
+       Map<String,String> enumFieldMap = getEnumFields("com.xiechy.QcState","getDescription");
         for(Map.Entry<String,String> entry :enumFieldMap.entrySet()){
             System.out.println(entry.getKey()+":"+entry.getValue());
         }

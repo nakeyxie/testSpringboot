@@ -1,5 +1,7 @@
 package com.xiechy;
 
+import org.junit.Test;
+
 /**
  * @author xiechy
  * @create 2018-04-02
@@ -13,20 +15,48 @@ public class TestYinyong {
         System.out.println(u.toString());
     }
 
-   public User test(User user){
+    public User test(User user) {
         setId(user);
-       System.out.println("中间");
-         System.out.println(user.toString());
+        System.out.println("中间");
+        System.out.println(user.toString());
         setName(user);
-       return user;
-   }
+        return user;
+    }
 
     private void setName(User user) {
-        user.setId(99);
+        user.setName("test");
+        //引用指向新对象后就是一个新的地址,原来user不受影响
+        user = new User(40 ,"testNew");
     }
 
     private void setId(User user) {
-        user.setName("test");
+
+        user.setId(99);
+    }
+
+
+    /**
+     * 由于String类和包装类都没有提供value对应的setter方法，我们无法改变其内容，所以导致我们看起来好像是值传递。
+     *
+     * 总结一下java中方法参数的使用情况：
+
+     一个方法不能修改一个基本数据类型的参数(即数值型和布尔型)
+     一个方法可以改变一个对象参数的状态
+     ***一个方法不能让对象参数引用一个新的对象***
+     */
+    @Test
+    public void testInteger() {
+        Integer integer = new Integer(5);
+        testchange(integer);
+        //输出结果还是5
+        System.out.println(integer);
+    }
+
+    private void testchange(Integer integer) {
+        integer =new Integer(8);
+        //这里输出结果是8
+        System.out.println("方法里面的integer:"+integer);
+
     }
 
 }

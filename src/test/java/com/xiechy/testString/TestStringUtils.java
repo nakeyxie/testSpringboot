@@ -1,5 +1,8 @@
 package com.xiechy.testString;
+
 import org.apache.commons.lang3.StringUtils;
+
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,6 +16,10 @@ public class TestStringUtils {
     public static void main(String[] args) {
         List<String> testList = Arrays.asList("s1","s2","s3","s4","s5");
         System.out.println(StringUtils.join(testList,'8'));
+
+        //
+        System.out.println("------------------------------");
+        //System.out.println(Joiner.on(",").join(errorSampleIds));
     }
 }
 

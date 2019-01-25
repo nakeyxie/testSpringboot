@@ -24,6 +24,7 @@ public class TestStringFormat {
         //用法
         System.out.println(String.format("样本编号有误：%s", StringUtils.join(Arrays.asList("t1","t2","t3","t4"),";")));
         //样本编号有误：t1;t2;t3;t4
+        System.out.println(String.format("test1","test2","tes3","test4"));
     }
 }
 

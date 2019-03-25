@@ -1,5 +1,7 @@
+package com.xiechy;
+
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -9,6 +11,19 @@ import java.util.stream.Collectors;
  *
  */
 public class Testlamda {
+
+
+
+
+
+
+
+
+
+
+
+
+
     public static void main(String[] agrs) {
         List<Person> list = new ArrayList<Person>();
         list.add(new Person(1, "zhangsan"));

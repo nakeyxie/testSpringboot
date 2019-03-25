@@ -2,6 +2,8 @@ package com.xiechy;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 /**
  * @author xiechy
  * @create 2018-07-16
@@ -90,6 +92,13 @@ public class TestDouble {
         String d ="11";
         Double dd = Double.valueOf(d);
         System.out.println(dd);
+    }
+    @Test
+    public  void test5() {
+        double dilutionx = 10d/3;
+        BigDecimal bd=new BigDecimal(dilutionx).setScale(0, BigDecimal.ROUND_HALF_UP);
+        Integer result = Integer.parseInt(bd.toString());
+        System.out.println(result.toString());
     }
 
 }

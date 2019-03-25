@@ -16,14 +16,14 @@ import java.io.*;
  **/
 public class TestOperatorCmd {
     public static void main(String[] args) {
-        String order = "netstat -ano|findstr \"1099\"";
+       String order = "netstat -ano";
         String order1 = "ipconfig -all";
         //打开计算器
-        String order2 ="calc";
+        //String order ="calc";
 
-        String order3 = "netstat -a";
+//        String order3 = "netstat -a";
         String order4="cmd /k ipconfig";
-        String gbkOder = null;
+        /*String gbkOder = null;
         try {
             gbkOder = new String(order.getBytes(), "GBK");
         } catch (Exception e) {
@@ -33,8 +33,8 @@ public class TestOperatorCmd {
         if (gbkOder==null){
             System.out.println("转换异常！");
             return;
-        }
-        String outPut = callCmd(gbkOder);
+        }*/
+        String outPut = callCmd(order);
         System.out.println("out:" + outPut);
         if (StringUtils.isEmpty(outPut)) {
             System.out.println("无输出结果！");
@@ -97,6 +97,7 @@ public class TestOperatorCmd {
             BufferedReader bufferedReader = new BufferedReader
                     (new InputStreamReader(in, "GBK"));
             while ((line = bufferedReader.readLine()) != null) {
+                System.out.println("---->"+line);
                 sb.append(line + "\n");
             }
             bufferedReader.close();
@@ -119,6 +120,7 @@ public class TestOperatorCmd {
             e.printStackTrace();
         }
     }
+
 
 }
 

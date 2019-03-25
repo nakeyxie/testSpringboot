@@ -1,5 +1,9 @@
 package com.xiechy;
 
+import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -21,6 +25,22 @@ public class Testjava8 {
 
         System.out.println("---------------");
         System.out.println(optional.ofNullable(null).orElse(0L).toString());
+    }
+
+
+
+    /**
+     * 测试reduce函数
+     * 结果：1+2+3+4
+     * 相当于累加
+     */
+    @Test
+    public void testReduce(){
+        List<Integer> params = Arrays.asList(new Integer[]{1,2,3,4});
+        int result = params.stream().map(i->{
+            return i;
+        }).reduce(0,(h1,h2)->h1+h2);
+        System.out.println(result);
     }
 }
 

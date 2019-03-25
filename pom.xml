@@ -140,6 +140,14 @@
        </dependency>
 
 
+		<!--nutz框架引入-->
+		<!--<dependency>
+			<groupId>org.nutz</groupId>
+			<artifactId>nutzwx</artifactId>
+			<version>1.r.62-SNAPSHOT</version>
+		</dependency>-->
+
+
      </dependencies>
 
      <build>

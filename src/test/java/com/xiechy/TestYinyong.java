@@ -59,6 +59,36 @@ public class TestYinyong {
 
     }
 
+    @Test
+    public void testYingYong() {
+
+        User u1 = null;
+        User u2 = null;
+        for (int i = 0; i < 5; i++) {
+            User u = new User();
+            u.setName("test" + i);
+            if (u1 == null) {
+                u1 = u;
+                u2 = u1;
+            } else {
+                u1 =u;
+            }
+        }
+        System.out.println(u2);
+        System.out.println(u1);
+
+    }
+
+    // += 后面不能跟null
+    @Test
+    public void testDoubleAdd(){
+        User u = new User();
+        double d = 0;
+        if(u != null){
+            d += u.getSarlay();
+        }
+    }
+
 }
 
 

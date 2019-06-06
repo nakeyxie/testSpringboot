@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><bookstore>
+<TestPara>
+<index>1</index>
+<testName>FAI18</testName>
+<min>0.03</min>
+<max>0.03</max>
+<pixV>0</pixV>
+<Bc>1</Bc>
+</TestPara>
+<book id="1">
+<name>雷神</name>
+</book>
+</bookstore>

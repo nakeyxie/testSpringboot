@@ -81,6 +81,14 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<!-- servlet依赖.-->
+
+		<!--引入IO包-->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
+		</dependency>
+
 		<!--excel导出用poi start-->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -93,6 +101,20 @@
 			<version>3.9</version>
 		</dependency>
 		<!--excel导出用poi  end-->
+
+
+		<!--引入二维码-->
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>core</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>javase</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -138,6 +160,12 @@
          <artifactId>tomcat-embed-jasper</artifactId>
          <!-- <scope>provided</scope>.-->
        </dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
 
 
 		<!--nutz框架引入-->

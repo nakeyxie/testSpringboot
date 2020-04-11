@@ -17,6 +17,7 @@ public class HelloSpringboot {
 
     @RequestMapping("/list")
     public String hello() {
+
         List<User> userList = TestQuery.getUser();
         StringBuffer strbuf = new StringBuffer();
         strbuf.append("<table width=\"250px\" style=\"border-collapse: collapse \">");

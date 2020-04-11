@@ -1,6 +1,7 @@
 package com.xiechy.testString;
 
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 
 import java.util.Arrays;
 
@@ -25,6 +26,11 @@ public class TestStringFormat {
         System.out.println(String.format("样本编号有误：%s", StringUtils.join(Arrays.asList("t1","t2","t3","t4"),";")));
         //样本编号有误：t1;t2;t3;t4
         System.out.println(String.format("test1","test2","tes3","test4"));
+    }
+
+    @Test
+    public void test1(){
+         System.out.println(String.format("1","2","3","4"));
     }
 }
 

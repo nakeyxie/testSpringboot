@@ -27,6 +27,7 @@ public class HelloController {
     public String name(Map<String, Object> map) {
         map.put("name", "nakey22112");
 
+
         System.out.println("============================================");
         return "hello";
     }

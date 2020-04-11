@@ -1,6 +1,6 @@
 package com.xiechy.testString;
 
-import org.assertj.core.util.Lists;
+//import org.assertj.core.util.Lists;
 import org.junit.Test;
 
 import java.util.List;
@@ -19,9 +19,9 @@ public class TestSplit {
 
 
     public static void main(String[] args) {
-        String inspectNo ="123456";
+        /*String inspectNo ="123456";
         List<String> inspectNos = Lists.newArrayList(inspectNo.split("\\s+"));
-        System.out.println(inspectNos);
+        System.out.println(inspectNos);*/
 
         TestSplit t = new TestSplit();
     }

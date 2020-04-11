@@ -64,6 +64,7 @@ public class TestBucketSort {
     @Test
     public  void test(){
         String index ="F#1/R#11";
+        System.out.println(index);
         if(index.contains("/")){
           String[] indexs = index.split("/");
             System.out.println(indexs[0]);

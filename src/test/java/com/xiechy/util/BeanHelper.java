@@ -1,0 +1,45 @@
+package com.xiechy.util;
+
+import org.springframework.beans.BeanUtils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by chenlichun on 2016/2/1
+ */
+public abstract class BeanHelper {
+
+    public static <T> T copyProperties(Object source, Class<T> targetClass) {
+        T target = null;
+        try {
+            if (source != null) {
+                target = targetClass.newInstance();
+            }
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        if (target != null)
+            BeanUtils.copyProperties(source, target);
+        return target;
+    }
+
+    public static <T> List<T> copyProperties(List<?> sources, Class<T> targetClass) {
+        List<T> targets = null;
+        if (sources != null) {
+            targets = new ArrayList<>();
+            for (Object source : sources) {
+                T target = copyProperties(source, targetClass);
+                targets.add(target);
+            }
+        }
+        return targets;
+    }
+
+    public static <T> T getOne(List<T> list) {
+        return list == null || list.isEmpty() ? null : list.get(0);
+    }
+
+}

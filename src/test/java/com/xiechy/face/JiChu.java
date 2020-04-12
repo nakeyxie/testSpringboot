@@ -1,4 +1,4 @@
-package face;
+package com.xiechy.face;
 
 public class JiChu {
 

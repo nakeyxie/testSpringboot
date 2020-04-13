@@ -1,4 +1,4 @@
-package testFile;
+package com.xiechy.testFile;
 
 import java.io.File;
 

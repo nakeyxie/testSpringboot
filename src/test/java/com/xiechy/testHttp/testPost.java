@@ -1,4 +1,4 @@
-package testHttp;
+package com.xiechy.testHttp;
 
 
 import org.apache.commons.httpclient.HttpClient;  

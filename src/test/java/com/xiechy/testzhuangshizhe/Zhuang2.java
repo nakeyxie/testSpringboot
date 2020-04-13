@@ -1,4 +1,4 @@
-package testzhuangshizhe;
+package com.xiechy.testzhuangshizhe;
 
 public class Zhuang2 implements IZhuang {
 	IZhuang iz;

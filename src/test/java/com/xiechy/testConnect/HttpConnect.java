@@ -1,4 +1,4 @@
-package testConnect;
+package com.xiechy.testConnect;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +25,7 @@ public class HttpConnect {
 		inputParam.put("param1", "test1");
 		inputParam.put("name", "xcy");
 		inputParam.put("password", "123");
-		String json =JsonUtils.toJSONString(inputParam);
+		String json = JsonUtils.toJSONString(inputParam);
 		System.out.println(json);
 		String addr="/do/epas/getPolicy";
         connect(url,json,addr);

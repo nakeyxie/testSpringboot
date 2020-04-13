@@ -1,4 +1,4 @@
-package testConnect;
+package com.xiechy.testConnect;
 
 import java.util.List;
 

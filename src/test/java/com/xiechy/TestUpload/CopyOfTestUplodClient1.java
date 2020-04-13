@@ -1,4 +1,4 @@
-package TestUpload;
+package com.xiechy.TestUpload;
 
 import java.io.BufferedReader;
 import java.io.File;

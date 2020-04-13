@@ -1,4 +1,4 @@
-package testzhuangshizhe;
+package com.xiechy.testzhuangshizhe;
 
 public interface IZhuang {
 	

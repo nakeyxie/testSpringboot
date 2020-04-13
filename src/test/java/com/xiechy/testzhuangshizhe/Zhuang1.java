@@ -1,4 +1,4 @@
-package testzhuangshizhe;
+package com.xiechy.testzhuangshizhe;
 
 public class Zhuang1 implements IZhuang {
 	//装饰者模式的特点在这一块：

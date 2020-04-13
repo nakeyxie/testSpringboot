@@ -4,9 +4,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Field;
 
+import com.xiechy.testString.TestSplit;
 import org.junit.Test;
 
-import com.xiechy.test.TestTime;
+
 
 public class testMain {
 
@@ -27,7 +28,7 @@ public class testMain {
 		Method m = c.getDeclaredMethod("sayHello");
 		m.setAccessible(true);
 		m.invoke(o, new Class[] {});
-		Class c1 = TestTime.class;
+		Class c1 = TestSplit.class;
 		Field[] f = c1.getFields();
 		try {
 			Field f1 = c1.getDeclaredField("");// 获取具体属性

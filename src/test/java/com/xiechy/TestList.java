@@ -16,7 +16,10 @@ public class TestList {
             list.add(i);
         }
         System.out.println(list);
+        //subList包头不包尾
         List subList =list.subList(0,2);
+        //java.util.ConcurrentModificationException    subList之后不能对list进行结构性的修改
+        list.add(11);
         System.out.println("subList:"+subList);
     }
 }

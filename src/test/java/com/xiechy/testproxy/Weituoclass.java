@@ -2,6 +2,7 @@ package com.xiechy.testproxy;
 
 public class Weituoclass implements Queryshuju {
 
+
 	@Override
 	public void Query1() {
 		System.out.println("委托类的查询1");
@@ -14,5 +15,4 @@ public class Weituoclass implements Queryshuju {
 		System.out.println("委托类的查询2");
 
 	}
-
 }

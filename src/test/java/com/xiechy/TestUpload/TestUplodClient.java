@@ -1,13 +1,7 @@
 package com.xiechy.TestUpload;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
+import java.io.*;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class TestUplodClient {
@@ -50,7 +44,6 @@ public class TestUplodClient {
 	public static File getFile() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("请输入文件路径！");
-
 		while (true) {
 			String line = sc.nextLine();
 			File file = new File(line);

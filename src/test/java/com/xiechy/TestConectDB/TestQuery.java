@@ -1,9 +1,11 @@
-package com.xiechy.testConectDB;
+package com.xiechy.TestConectDB;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import com.xiechy.testConectDB.DbUtil;
+
+import static com.xiechy.TestConectDB.DBUtil.*;
+
 
 /**
  * @author xiechy
@@ -14,7 +16,7 @@ public class TestQuery {
     public static void main(String[] args) {
         PreparedStatement statement = null;
         try {
-            Connection con = DbUtil.getConnection();
+            Connection con = getConnection();
             statement = con.prepareStatement("select * from t_user");
             ResultSet set = statement.executeQuery();
             while (set.next()) {

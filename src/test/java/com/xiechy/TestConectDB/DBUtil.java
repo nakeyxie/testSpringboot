@@ -1,4 +1,4 @@
-package com.xiechy.testConectDB;
+package com.xiechy.TestConectDB;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
  * jdbc工具类
  *
  */
-public class DbUtil {
+public class DBUtil {
 	public static Connection getConnection() throws Exception{
 		Connection conn = null;
 		try {

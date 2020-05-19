@@ -1,4 +1,4 @@
-package TestTcp;
+package com.xiechy.TestTcp;
 
 import java.io.BufferedReader;
 import java.io.IOException;

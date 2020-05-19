@@ -1,4 +1,4 @@
-package testshipeiqi;
+package com.xiechy.testshipeiqi;
 
 public abstract class Shipeiqi implements jiekou {
 	public void method8() {

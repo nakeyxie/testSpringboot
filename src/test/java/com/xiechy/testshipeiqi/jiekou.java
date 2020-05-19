@@ -1,4 +1,4 @@
-package testshipeiqi;
+package com.xiechy.testshipeiqi;
 
 public interface jiekou {
 	

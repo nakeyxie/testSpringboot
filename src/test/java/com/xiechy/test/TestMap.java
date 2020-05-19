@@ -1,5 +1,7 @@
 package com.xiechy.test;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,7 +19,9 @@ public class TestMap {
 		ConcurrentHashMap  concurrentHashMap = new ConcurrentHashMap();
 		concurrentHashMap.put("1", "1");
 //		ConcurrentBag<T> concurrentbag= new ConcurrentBag();
-		
+
+		//会抛空指针异常
+		concurrentHashMap.containsKey(null);
 		//线程安全的list
 		List<Object> list =Collections.synchronizedList(new ArrayList<Object>());
 		//线程安全的map
@@ -32,7 +36,6 @@ public class TestMap {
 			
 			System.out.println(map.get(pk));
 		}
-
 	}
 	
 	public void Function()
@@ -41,6 +44,13 @@ public class TestMap {
 	
 	// Access thread-sensitive resources.
 
+	}
+
+	@Test
+	public void testNull(){
+		Map testMap1 = new HashMap();
+		testMap1.containsKey(null);
+		System.out.println("不会空指针");
 	}
 
 }

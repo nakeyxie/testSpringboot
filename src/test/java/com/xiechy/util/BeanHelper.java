@@ -5,9 +5,7 @@ import org.springframework.beans.BeanUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by chenlichun on 2016/2/1
- */
+
 public abstract class BeanHelper {
 
     public static <T> T copyProperties(Object source, Class<T> targetClass) {

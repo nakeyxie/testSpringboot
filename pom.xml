@@ -22,7 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-
+		<wx.java.version>3.7.0</wx.java.version>
 	</properties>
 
 
@@ -219,8 +219,20 @@
 			<version>5.1.1</version>
 		</dependency>
 
+		<!--微信公众号-->
+		<dependency>
+			<groupId>com.github.binarywang</groupId>
+			<artifactId>wx-java-mp-spring-boot-starter</artifactId>
+			<version>${wx.java.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-     </dependencies>
+
+	</dependencies>
 
      <build>
          <plugins>

@@ -135,14 +135,18 @@ public class MD5Util {
      * @return void
     */
 	public static void main(String[] args) {
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("CS1278948742015221760");
-		buffer.append("CS646545823657623552");
-		buffer.append("1000");
-		buffer.append("0");
-		buffer.append("rNBdNtjuefmwLGzXjHoN");
+/*		StringBuffer buffer = new StringBuffer();
+		buffer.append("TS647985194531356672");//账户编号
+		buffer.append("CS647984896490340352");//司机编号
+		buffer.append("0");//可提现金额
+		buffer.append("1");//版本号
+		buffer.append("rNBdNtjuefmwLGzXjHoN");//salt
 		String toSign = buffer.toString();
 		String resultSign = MD5Util.MD5Encode(toSign, "UTF-8");
-		System.out.println("resultSign--》"+resultSign);
+		System.out.println("resultSign--》"+resultSign);*/
+		System.out.println("----------------------");
+		String money ="330";
+		String ressultSign1 = MD5Encode(money,"UTF-8");
+		System.out.println("resultSign1--:"+ressultSign1);
 	}
 }

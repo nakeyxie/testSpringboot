@@ -1,5 +1,6 @@
 package com.xiechy;
 
+import com.xiechy.code.User;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.BeanUtilsBean;
 

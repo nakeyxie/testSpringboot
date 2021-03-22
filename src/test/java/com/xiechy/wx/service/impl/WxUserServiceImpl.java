@@ -1,3 +1,4 @@
+/*
 package com.xiechy.wx.service.impl;
 
 import cn.ardy.lottery.connector.session.RedisService;
@@ -54,29 +55,37 @@ public class WxUserServiceImpl implements WxUserService {
     private String APPID;
     @Value("${wx.pm.key}")
     private String SECRET;
-    /**
+    */
+/**
      * 根据用户授权code，换取用户openId和用户授权accessToken
      * appid、secret、code
-     **/
+     **//*
+
     private static final String AUTH = "https://api.weixin.qq.com/sns/oauth2/access_token?" +
             "appid=%s&secret=%s&code=%s&grant_type=authorization_code";
 
-    /**
+    */
+/**
      * 获取微信应用授权token，应用内共用
      * appid 、secret
-     */
+     *//*
+
     private static final String ACCESS_TOKEN_URL = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s";
 
-    /**
+    */
+/**
      * 获取微信JSapi ticket,参数（应用的，非用户信息授权token）：access_token
      * https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=16_0GPZpSxuOHEBrxCoWlGl-2tgZHJLp3U_MtIIz9ESySFd38rxc1bFYY1PXWIbVHXBlpVQZxWT7jY2aogQawjcLg&type=jsapi
-     **/
+     **//*
+
     private static final String JSAPI_TICKET = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=%s&type=jsapi";
 
-    /****
+    */
+/****
      * 获取微信用户基本信息
      * 1 accessToken ;2 openId
-     */
+     *//*
+
     private static final String WX_USER_INFO = "https://api.weixin.qq.com/sns/userinfo?access_token=%s&openid=%s&lang=zh_CN";
 
     @Autowired
@@ -114,11 +123,13 @@ public class WxUserServiceImpl implements WxUserService {
         return user;
     }
 
-    /**
+    */
+/**
      * 获取accessToken
      *
      * @return
-     */
+     *//*
+
     public String getAccessToken() throws Exception {
         if (ACCESS_TOKEN != null && new Date().before(EXPIRES_DATE)) {
             return ACCESS_TOKEN;
@@ -182,7 +193,8 @@ public class WxUserServiceImpl implements WxUserService {
         return user;
     }
 
-    /**
+    */
+/**
      * http 请求
      *
      * @param url
@@ -190,7 +202,8 @@ public class WxUserServiceImpl implements WxUserService {
      * @param readTimeoutMs
      * @return
      * @throws Exception
-     */
+     *//*
+
     private String httpRequest(String url, int connectTimeoutMs, int readTimeoutMs) throws Exception {
         BasicHttpClientConnectionManager connManager;
         connManager = new BasicHttpClientConnectionManager(
@@ -260,3 +273,4 @@ public class WxUserServiceImpl implements WxUserService {
 }
 
 
+*/

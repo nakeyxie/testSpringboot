@@ -1,6 +1,6 @@
 package com.xiechy.reference;
 
-import com.xiechy.User;
+import com.xiechy.code.User;
 
 import java.lang.ref.WeakReference;
 

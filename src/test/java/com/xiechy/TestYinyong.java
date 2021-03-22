@@ -1,5 +1,6 @@
 package com.xiechy;
 
+import com.xiechy.code.User;
 import org.junit.Test;
 
 /**

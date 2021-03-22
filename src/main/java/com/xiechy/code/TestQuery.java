@@ -1,4 +1,4 @@
-package com.xiechy;
+package com.xiechy.code;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

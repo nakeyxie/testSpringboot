@@ -1,6 +1,6 @@
 package com.xiechy.objectCopy;
 
-import com.xiechy.User;
+import com.xiechy.code.User;
 
 /**
  *  浅克隆，浅拷贝

@@ -1,4 +1,4 @@
-package testConfig;
+package com.xiechy.testConfig;
 
 public class TestBean {
 

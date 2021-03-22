@@ -1,4 +1,4 @@
-package com.xiechy;
+package com.xiechy.code;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

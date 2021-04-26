@@ -23,7 +23,7 @@ public class TestException {
 				System.out.println('A');
 			}
 		} catch (Exception e) {
-		e.printStackTrace();
+		//e.printStackTrace(); 注释了就不会打印堆栈异常了
 		  throw new NullPointerException();
 		}
 	}

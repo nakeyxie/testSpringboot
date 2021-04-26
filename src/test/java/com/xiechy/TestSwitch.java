@@ -18,6 +18,8 @@ public class TestSwitch {
             case "7":
             case "8":
                 System.out.println("test3");
+            default:
+                System.out.println("default");
         }
 
     }

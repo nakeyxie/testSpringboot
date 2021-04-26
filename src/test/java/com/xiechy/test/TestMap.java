@@ -49,7 +49,12 @@ public class TestMap {
 	@Test
 	public void testNull(){
 		Map testMap1 = new HashMap();
-		testMap1.containsKey(null);
+		boolean hasNull = testMap1.containsKey(null);
+		System.out.println(hasNull);
+		testMap1.put(null,"123");
+		boolean result = testMap1.containsKey(null);
+		String value = (String)testMap1.get(null);
+		System.out.println("result:"+result+","+"value"+value);
 		System.out.println("不会空指针");
 	}
 

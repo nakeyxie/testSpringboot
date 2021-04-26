@@ -1,5 +1,10 @@
 package com.xiechy.testConnect;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,6 +53,53 @@ public class HttpConnect {
 		String result=post.getResponseBodyAsString();
 		System.out.println("qing qiu jie guo:"+result);
 		post.releaseConnection();
+	}
+
+	private String invoke(String json,String URL) throws Exception {
+		StringBuilder sb = new StringBuilder();
+		try {
+			java.net.URL url = new URL(URL);
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+			connection.setRequestMethod("POST");
+			connection.setReadTimeout(120000);
+			connection.setConnectTimeout(120000);
+			connection.setDoInput(true);
+			connection.setDoOutput(true);
+			connection.setInstanceFollowRedirects(true);
+			connection.setUseCaches(false);
+			connection.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+//            connection.setRequestProperty("accept", "application/json");
+			connection.setRequestProperty("appID", "5BE5EC70465B4F6AAEA7556AA933CAF2");//TODO
+//            connection.setRequestProperty("authorization", YthConst.CONFIG_PARAM.authorization);
+
+			byte[] writebytes = json.getBytes();
+			OutputStream outputStream = connection.getOutputStream();
+			outputStream.write(json.getBytes("UTF-8"));
+			outputStream.flush();
+			outputStream.close();
+
+			if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+				BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(),"GBK"));
+				String temp;
+				while ((temp = reader.readLine()) != null) {
+					sb.append(temp);
+				}
+				reader.close();
+			}else{
+				BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getErrorStream(),"GBK"));
+				String temp;
+				while ((temp = reader.readLine()) != null) {
+					sb.append(temp);
+				}
+				reader.close();
+				throw new Exception(sb.toString());
+			}
+
+			connection.disconnect();
+		} catch (Exception e) {
+			throw e;
+		}
+		return sb.toString();
 	}
 
 }

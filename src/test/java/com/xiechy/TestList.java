@@ -1,5 +1,7 @@
 package com.xiechy;
 
+import org.apache.tools.ant.taskdefs.optional.sos.SOS;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +20,7 @@ public class TestList {
         System.out.println(list);
         //subList包头不包尾
         List subList =list.subList(0,2);
+        System.out.println("subList:"+subList);
         //java.util.ConcurrentModificationException    subList之后不能对list进行结构性的修改
         list.add(11);
         System.out.println("subList:"+subList);

@@ -1,6 +1,13 @@
 package com.xiechy.test;
 
-public class test1 {
+/**
+ * @Description 编码测试  （中文乱码的产生原因）https://blog.csdn.net/java_gchsh/article/details/74173498
+ * @Author xcy
+ * @Date  2021/4/13 17:40
+ * @param null
+ * @return
+*/
+public class testUnicode {
 
 	/**
 	 * @param args

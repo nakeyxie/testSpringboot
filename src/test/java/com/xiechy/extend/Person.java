@@ -15,7 +15,7 @@ public class Person {
       public static void main (String [] args){
          Person p = new Child();
           //编译出错
-         // System.out.println(p.name);
+          //System.out.println(p.name);
       }
   }
 

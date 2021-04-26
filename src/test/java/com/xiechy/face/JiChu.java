@@ -20,7 +20,7 @@ class Test {
 	public Integer ints = 2;
 
 	public void trans(int i, String str, Integer ints) {
-		i = 2;
+		this.i = 2;
 		str = "2";
 		ints = 3;
 	}

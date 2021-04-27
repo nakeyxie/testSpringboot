@@ -97,6 +97,13 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!--加密的一个类的jar包-->
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15on</artifactId>
+			<version>1.56</version>
+		</dependency>
+
 
 		<!--引入IO包-->
 		<dependency>

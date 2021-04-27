@@ -42,6 +42,11 @@ public class MD5 {
 	}
 
 	public static void main(String[] arg){
-		System.out.print(MD5.encode("abc这是一个测试123"));
+		//生成等长的32个字符
+		System.out.println(MD5.encode("项目文档云"));
+
+		System.out.println(MD5.encode("abc123"));
+		//A7A812D193832D2358254EF50DC74180
+		//E99A18C428CB38D5F260853678922E03
 	}
 }

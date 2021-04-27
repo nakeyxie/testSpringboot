@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.xiechy.testBeanutils.Person;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
+import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.RequestEntity;
@@ -13,6 +14,7 @@ import org.apache.commons.httpclient.methods.StringRequestEntity;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -114,6 +116,81 @@ public class ExperimentPackServiceTest {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void tesetSendSmsCode(){
+        HttpClient httpclient = new HttpClient();
+        String url = "http://api.daiyicloud.com/asmx/smsservice.aspx";
+        PostMethod post = new PostMethod(url);
+        String info = null;
+        Map<String, String> paramsMap = new HashMap<String, String>();
+        StringBuffer extno=new StringBuffer();
+        paramsMap.put("name","zjgg");
+        paramsMap.put("pwd","ABC4EF5D4E7919ABDCE43CCB03A8");
+        paramsMap.put("mobile","15078544775");
+        paramsMap.put("context","测试发送");
+        paramsMap.put("sign","【中建科工】");
+        paramsMap.put("stime","");
+        paramsMap.put("extno","");
+        try {
+            RequestEntity entity = new StringRequestEntity(JSON.toJSONString(paramsMap), "text/xml","UTF-8");
+            post.setRequestEntity(entity);
+            httpclient.executeMethod(post);
+            int code = post.getStatusCode();
+            if (code == HttpStatus.SC_OK){
+                byte[] responseBody = post.getResponseBody();
+                info = new String(responseBody, "UTF-8");
+                /*JSONArray jsoin = JSONArray.parseArray(info);
+                List<Object> list = (List<Object>) JSONArray.toJSON(jsoin);
+                System.out.println("=========="+list+"++++++++++");*/
+                System.out.println("返回结果："+info);
+
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            post.releaseConnection();
+        }
+    }
+
+
+    @Test
+    public void testSendList(){
+        HttpClient httpclient = new HttpClient();
+        String url = "http://10.9.242.3:80/service/rest/sendSmsMsg";
+        PostMethod post = new PostMethod(url);
+        String info = null;
+        //List<String> loginids = Arrays.asList("xcy","man","lg","db");
+        NameValuePair[] data = new NameValuePair[2];
+        //NameValuePair nameValuePair1 = new NameValuePair("loginids", loginids);
+        //NameValuePair nameValuePair2 = new NameValuePair("docId", "42");
+        //data[0]=nameValuePair1;
+        //data[1]=nameValuePair2;
+        post.setRequestBody(data);
+        Map<String, Object> paramsMap = new HashMap<String, Object>();
+        StringBuffer extno=new StringBuffer();
+        List<String> loginids = Arrays.asList("xcy","man","lg","db");
+        paramsMap.put("loginids",loginids);
+        try {
+            RequestEntity entity = new StringRequestEntity(JSON.toJSONString(paramsMap), "text/xml","UTF-8");
+            post.setRequestEntity(entity);
+            httpclient.executeMethod(post);
+            int code = post.getStatusCode();
+            if (code == HttpStatus.SC_OK){
+                byte[] responseBody = post.getResponseBody();
+                info = new String(responseBody, "UTF-8");
+                /*JSONArray jsoin = JSONArray.parseArray(info);
+                List<Object> list = (List<Object>) JSONArray.toJSON(jsoin);
+                System.out.println("=========="+list+"++++++++++");*/
+                System.out.println("返回结果："+info);
+
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            post.releaseConnection();
         }
     }
 

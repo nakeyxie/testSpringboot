@@ -79,4 +79,6 @@ public class TestHuToolJM {
        String encryptHex = des.encryptHex(content);
        String decryptStr = des.decryptStr(encryptHex);
    }
+
+
 }

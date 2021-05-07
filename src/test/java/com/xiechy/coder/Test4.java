@@ -1,8 +1,16 @@
 package com.xiechy.coder;
   
-import java.security.Key;  
+import org.junit.Test;
+
+import java.nio.charset.Charset;
+import java.security.Key;
 import java.security.Security;  
-import javax.crypto.Cipher;  
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.DESKeySpec;
+import javax.crypto.spec.IvParameterSpec;
+
 /** 
  * DES加密和解密工具,可以对字符串进行加密和解密操作  。  
  */  
@@ -10,9 +18,9 @@ public class Test4 {
     /** 
      * 默认构造方法，使用默认密钥 
      */  
-    public Test4() throws Exception {  
+  /*  public Test4() throws Exception {
         this(strDefaultKey);  
-    }  
+    }  */
     /** 
      * 指定密钥构造方法 
      * @param strKey  指定的密钥 
@@ -124,19 +132,116 @@ public class Test4 {
     }  
     public static void main(String[] args) {  
         try {  
-            String test1 = "987654321";  
+           /* String test1 = "987654321";
             Test4 des1 = new Test4();// 使用默认密钥  
             System.out.println("加密前的字符：" + test1);  
             System.out.println("加密后的字符：" + des1.encrypt(test1));  
-            System.out.println("解密后的字符：" + des1.decrypt(des1.encrypt(test1)));  
+            System.out.println("解密后的字符：" + des1.decrypt(des1.encrypt(test1))); */
               
-            String test2 = "123456789";  
+           /* String test2 = "123456789";
             Test4 des2 = new Test4("leeme32nz");// 自定义密钥  
             System.out.println("加密前的字符：" + test2);  
             System.out.println("加密后的字符：" + des2.encrypt(test2));  
-            System.out.println("解密后的字符：" + des2.decrypt(des2.encrypt(test2)));  
+            System.out.println("解密后的字符：" + des2.decrypt(des2.encrypt(test2)));  */
+
+
+
+            //String test2 = "测试发送短信给你!";//7235194fc61ab9bba9e22a0e20e9fd6e84b32ac69f643b4f220e5bd7dd658eeb
+            //String test2 = "通知";//a88a143fdf596594
+            //String test2 = "xiechengyu";//42b6b3981cfab543cbd003faf0c47b90
+           /* String test2 = "huayuehui";//0f951016a61915816a830041a23d5e0e
+            Test4 des2 = new Test4("LqIiX5mq");// 自定义密钥
+            System.out.println("加密后的字符：" + des2.encrypt(test2));*/
+
+
+            //测试特殊加密解密
+            String testStr = "huayuehui";
+            String encrypt = specailEncrypt(testStr, "LqIiX5mq", "UTF8");
+            System.out.println("加密后:"+encrypt);
+            String decrypt = specailDecrypt(encrypt , "LqIiX5mq", "UTF8");
+            System.out.println("解密后:"+decrypt);
+            System.out.println();
+
         } catch (Exception e) {  
             e.printStackTrace();  
         }  
-    }  
+    }
+
+
+    /**
+     * @Description 辅助测试接口
+     * @Author xcy
+     * @Date  2021/4/27 15:08
+     * @param
+     * @return void
+    */
+    @Test
+    public void helpTestIterface(){
+        try {
+            String test2 = "测试发送短信给你!";
+            Test4 des2 = new Test4("LqIiX5mq");// 自定义密钥
+            System.out.println("加密后的字符：" + des2.encrypt(test2));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private  static String specailEncrypt(String strIn, String sKey, String charset){
+        byte[] buf = null;
+        String rst = null;
+        try{
+            //需要加密的数组
+            byte[] arrB = strIn.getBytes(charset);
+            byte[] key = sKey.getBytes();
+            IvParameterSpec iv = new IvParameterSpec(key);
+            DESKeySpec desKey = new DESKeySpec(key);
+            SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
+            SecretKey securekey = keyFactory.generateSecret(desKey);
+            Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
+            cipher.init(Cipher.ENCRYPT_MODE, securekey, iv);
+            buf = cipher.doFinal(arrB);
+            rst =byteArr2HexStr(buf);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return rst;
+    }
+
+
+
+
+    /**
+     * @Description 特殊的解密方法
+     * @Author xcy
+     * @Date  2021/4/27 15:26
+     * @param strIn
+     * @param sKey
+     * @param charset
+     * @return java.lang.String
+    */
+    private static String specailDecrypt(String strIn,String sKey,String charset){
+        byte[] buf = null;
+        try{
+            byte[] result = new byte[strIn.length() / 2];
+            for (int i = 0; i < strIn.length() / 2; i++) {
+                int high = Integer.parseInt(strIn.substring(i * 2, i * 2 + 1), 16);
+                int low = Integer.parseInt(strIn.substring(i * 2 + 1, i * 2 + 2), 16);
+                result[i] = (byte) (high * 16 + low);
+            }
+
+            byte[] key = sKey.getBytes();
+            IvParameterSpec iv = new IvParameterSpec(key);
+            DESKeySpec desKey = new DESKeySpec(key);
+            SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
+            SecretKey securekey = keyFactory.generateSecret(desKey);
+            Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
+            cipher.init(Cipher.DECRYPT_MODE, securekey, iv);
+            buf = cipher.doFinal(result);
+        }catch(Exception e){
+            return null;
+        }
+        String rst = new String(buf, Charset.forName(charset));
+        return rst;
+    }
 }  

@@ -18,7 +18,7 @@ import java.util.Stack;
  */
 public class charStack {
     public static void main(String[] args) {
-        System.out.println(isValid("(}"));
+        System.out.println(isValid("(){"));
     }
 
     public static boolean isValid(String strt){

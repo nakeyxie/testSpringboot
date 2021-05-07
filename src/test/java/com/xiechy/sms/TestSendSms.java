@@ -70,4 +70,24 @@ public class TestSendSms {
             post.releaseConnection();
         }
     }
+
+
+
+    @Test
+    public void cscecSendCode(){
+        String url ="http://api.daiyicloud.com/asmx/smsservice.aspx";
+        Map<String,String> paramsMap = new HashMap<String,String>();
+        paramsMap.put("name","zjgg");
+        paramsMap.put("pwd","C254BD8FD31325DE63AA1256F0B4");
+        paramsMap.put("mobile","15078544775");
+        paramsMap.put("content","您好：单据编号1111111111111111111111的单据被挂起了，原因：XXXXXXXXXXXXXXX。请尽快按要求补寄所需附件。");
+        paramsMap.put("sign","【中建科工】");
+        paramsMap.put("stime","");
+        paramsMap.put("type","pt");
+        paramsMap.put("extno","");
+        String response = HttpUtils.URLPost(url,paramsMap,"UTF-8");
+        System.out.println("返回结果:"+response);
+        //短信内容:【测试主题】测试发送短信!
+
+    }
 }

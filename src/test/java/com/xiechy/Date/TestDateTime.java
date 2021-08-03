@@ -1,3 +1,4 @@
+/*
 package com.xiechy.Date;
 
 
@@ -12,12 +13,14 @@ import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+*/
 /**
  * @ClassName TestDateTime
  * @Description TODO
  * @Author xcy
  * @Date 2020/8/12 14:55
- */
+ *//*
+
 public class TestDateTime {
 
     @Test
@@ -49,12 +52,14 @@ public class TestDateTime {
         return false;
     }
 
-    /**
+    */
+/**
      * 获取日期后N天
      *
      * @param date
      * @return
-     */
+     *//*
+
     public static Date getDayAfter(Date date,int num) {
         GregorianCalendar gregorianCalendar = new GregorianCalendar();
         gregorianCalendar.setTime(date);
@@ -97,3 +102,4 @@ public class TestDateTime {
 
     }
 }
+*/

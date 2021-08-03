@@ -1,7 +1,6 @@
 package com.xiechy;
 
 import com.alibaba.fastjson.JSON;
-import org.hibernate.validator.internal.constraintvalidators.bv.size.SizeValidatorForArraysOfShort;
 import org.junit.Test;
 
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.xiechy;
+package com.xiechy.distinct;
 
 import java.util.*;
 import java.util.stream.Collectors;
